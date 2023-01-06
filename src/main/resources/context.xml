@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:property-placeholder location="context.properties"/>
+
+    <bean id="car" class="org.example.model.Car">
+        <constructor-arg name="speed" value="${car.speed}"/>
+    </bean>
+
+    <bean id="door" class="org.example.model.Door">
+        <constructor-arg name="height" value="${door.height}"/>
+        <constructor-arg name="width" value="${door.width}"/>
+    </bean>
+
+    <bean id="employee" class="org.example.model.Employee">
+        <constructor-arg name="car" ref="car"/>
+        <constructor-arg name="house" ref="house"/>
+        <constructor-arg name="pet" ref="pet"/>
+        <constructor-arg name="name" value="${employee.name}"/>
+    </bean>
+
+    <bean id="house" class="org.example.model.House">
+        <constructor-arg name="door" ref="door"/>
+        <constructor-arg name="window" ref="window"/>
+        <constructor-arg name="wall" ref="wall"/>
+    </bean>
+
+    <bean id="pet" class="org.example.model.Pet">
+        <constructor-arg name="name" value="${pet.name}"/>
+        <constructor-arg name="age" value="${pet.age}"/>
+    </bean>
+
+    <bean id="wall" class="org.example.model.Wall">
+        <constructor-arg name="material" value="${wall.material}"/>
+    </bean>
+
+    <bean id="window" class="org.example.model.Window">
+        <constructor-arg name="height" value="${window.height}"/>
+        <constructor-arg name="width" value="${window.width}"/>
+    </bean>
+</beans>
