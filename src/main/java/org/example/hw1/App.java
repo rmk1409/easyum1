@@ -1,6 +1,6 @@
-package org.example;
+package org.example.hw1;
 
-import org.example.model.Employee;
+import org.example.hw1.model.Employee;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**

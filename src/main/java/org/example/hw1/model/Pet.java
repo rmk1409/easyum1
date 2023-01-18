@@ -1,4 +1,4 @@
-package org.example.model;
+package org.example.hw1.model;
 
 public class Pet {
     private final String name;

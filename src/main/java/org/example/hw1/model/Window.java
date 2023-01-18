@@ -1,17 +1,17 @@
-package org.example.model;
+package org.example.hw1.model;
 
-public class Door {
+public class Window {
     private final int width;
     private final int height;
 
-    public Door(int width, int height) {
+    public Window(int width, int height) {
         this.width = width;
         this.height = height;
     }
 
     @Override
     public String toString() {
-        return "Door{" +
+        return "Window{" +
                 "width=" + width +
                 ", height=" + height +
                 '}';

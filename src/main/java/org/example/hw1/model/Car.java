@@ -1,7 +1,7 @@
-package org.example.model;
+package org.example.hw1.model;
 
 public class Car {
-    private int speed;
+    private final int speed;
 
     public Car(int speed) {
         this.speed = speed;

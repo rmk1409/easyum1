@@ -1,4 +1,4 @@
-package org.example.model;
+package org.example.hw1.model;
 
 public class Employee {
     private final String name;

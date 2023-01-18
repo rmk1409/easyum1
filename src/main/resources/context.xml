@@ -7,40 +7,40 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:property-placeholder location="context.properties"/>
+    <context:property-placeholder location="application.properties"/>
 
-    <bean id="car" class="org.example.model.Car">
+    <bean id="car" class="org.example.hw1.model.Car">
         <constructor-arg name="speed" value="${car.speed}"/>
     </bean>
 
-    <bean id="door" class="org.example.model.Door">
+    <bean id="door" class="org.example.hw1.model.Door">
         <constructor-arg name="height" value="${door.height}"/>
         <constructor-arg name="width" value="${door.width}"/>
     </bean>
 
-    <bean id="employee" class="org.example.model.Employee">
+    <bean id="employee" class="org.example.hw1.model.Employee">
         <constructor-arg name="car" ref="car"/>
         <constructor-arg name="house" ref="house"/>
         <constructor-arg name="pet" ref="pet"/>
         <constructor-arg name="name" value="${employee.name}"/>
     </bean>
 
-    <bean id="house" class="org.example.model.House">
+    <bean id="house" class="org.example.hw1.model.House">
         <constructor-arg name="door" ref="door"/>
         <constructor-arg name="window" ref="window"/>
         <constructor-arg name="wall" ref="wall"/>
     </bean>
 
-    <bean id="pet" class="org.example.model.Pet">
+    <bean id="pet" class="org.example.hw1.model.Pet">
         <constructor-arg name="name" value="${pet.name}"/>
         <constructor-arg name="age" value="${pet.age}"/>
     </bean>
 
-    <bean id="wall" class="org.example.model.Wall">
+    <bean id="wall" class="org.example.hw1.model.Wall">
         <constructor-arg name="material" value="${wall.material}"/>
     </bean>
 
-    <bean id="window" class="org.example.model.Window">
+    <bean id="window" class="org.example.hw1.model.Window">
         <constructor-arg name="height" value="${window.height}"/>
         <constructor-arg name="width" value="${window.width}"/>
     </bean>
