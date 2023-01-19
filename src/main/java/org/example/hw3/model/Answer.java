@@ -1,6 +1,6 @@
 package org.example.hw3.model;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Entity
 public class Answer {
