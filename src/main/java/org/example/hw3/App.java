@@ -72,18 +72,18 @@ public class App {
             session.beginTransaction();
 
             Question question1 = new Question("question1");
-            question1.setLevel(session.get(Level.class, 1));
-            question1.setTopic(session.get(Topic.class, 1));
+            question1.setLevel(session.get(Level.class, 1L));
+            question1.setTopic(session.get(Topic.class, 1L));
             session.save(question1);
 
             Question question2 = new Question("question2");
-            question2.setLevel(session.get(Level.class, 1));
-            question2.setTopic(session.get(Topic.class, 2));
+            question2.setLevel(session.get(Level.class, 1L));
+            question2.setTopic(session.get(Topic.class, 2L));
             session.save(question2);
 
             Question question3 = new Question("question3");
-            question3.setLevel(session.get(Level.class, 2));
-            question3.setTopic(session.get(Topic.class, 2));
+            question3.setLevel(session.get(Level.class, 2L));
+            question3.setTopic(session.get(Topic.class, 2L));
             session.save(question3);
 
             session.getTransaction().commit();
@@ -94,7 +94,7 @@ public class App {
         try (Session session = factory.openSession()) {
             session.beginTransaction();
 
-            Question question1 = session.get(Question.class, 1);
+            Question question1 = session.get(Question.class, 1L);
             Answer answer1 = new Answer("answer1");
             Answer answer2 = new Answer("answer2");
             session.save(answer1);
@@ -104,7 +104,7 @@ public class App {
             question1.addAnswer(answer2);
             session.save(question1);
 
-            Question question2 = session.get(Question.class, 2);
+            Question question2 = session.get(Question.class, 2L);
             Answer answer3 = new Answer("answer3");
             Answer answer4 = new Answer("answer4");
             Answer answer5 = new Answer("answer5");
@@ -146,9 +146,9 @@ public class App {
         try (Session session = factory.openSession()) {
             session.beginTransaction();
 
-            Question question2 = session.get(Question.class, 2);
-            Answer answer3 = session.get(Answer.class, 3);
-            Answer answer4 = session.get(Answer.class, 4);
+            Question question2 = session.get(Question.class, 2L);
+            Answer answer3 = session.get(Answer.class, 3L);
+            Answer answer4 = session.get(Answer.class, 4L);
             question2.removeAnswer(answer3);
             question2.removeAnswer(answer4);
 
@@ -160,7 +160,7 @@ public class App {
         try (Session session = factory.openSession()) {
             session.beginTransaction();
 
-            Question question = session.get(Question.class, 2);
+            Question question = session.get(Question.class, 2L);
             session.remove(question);
 
             session.getTransaction().commit();

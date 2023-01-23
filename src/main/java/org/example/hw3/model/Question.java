@@ -13,9 +13,9 @@ public class Question {
     private String content;
     @OneToMany(mappedBy = "question", orphanRemoval = true, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private List<Answer> answers;
-    @OneToOne
+    @ManyToOne
     private Topic topic;
-    @OneToOne
+    @ManyToOne
     private Level level;
 
     public Question() {
